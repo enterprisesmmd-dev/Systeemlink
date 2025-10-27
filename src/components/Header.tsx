@@ -5,7 +5,9 @@ import { Button } from './ui/button';
 import { usePrefetch } from '../hooks/usePrefetch';
 import { useTheme } from '../hooks/useTheme';
 import { motion, AnimatePresence } from 'motion/react';
-import logo from 'figma:asset/4cc1dfdabb026e08ad887f3b3cf0ef7043a211cb.png';
+
+// Use external URL for header logo
+const logo = 'https://i.ibb.co/Gv0xYGJB/4cc1dfdabb026e08ad887f3b3cf0ef7043a211cb-d-WZj-J9q0.png';
 
 export function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);

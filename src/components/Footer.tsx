@@ -5,7 +5,9 @@ import { Mail, Phone, MapPin, Facebook, Linkedin, Twitter, Moon, Sun } from 'luc
 import { ImageWithFallback } from './figma/ImageWithFallback';
 import { getCompanySettings } from './cms/CompanySettings';
 import { useTheme } from '../hooks/useTheme';
-import logo from 'figma:asset/9f5871c0686a2e1d028b259ce04774784f8a5a45.png';
+
+// Use external URL for footer logo
+const logo = 'https://i.ibb.co/FkdQzhts/cc1c034c-d843-4cf1-affa-95f62f7a5413.jpg';
 
 export function Footer() {
   const navigate = useNavigate();
