@@ -61,7 +61,7 @@ export function Header() {
               <div className="flex items-center gap-6 justify-start">
                 <Link
                   to="/"
-                  className={`transition-colors ${
+                  className={`transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-[#0ea5e9]/50 focus-visible:ring-offset-2 rounded-lg ${
                     isActive('/') && !location.pathname.includes('oplossingen') && !location.pathname.includes('branches') && !location.pathname.includes('bedrijfsinformatie')
                       ? 'text-[#0ea5e9]'
                       : 'text-gray-700 dark:text-gray-300 hover:text-[#0ea5e9]'
@@ -72,7 +72,7 @@ export function Header() {
                 </Link>
                 
                 <div className="group relative">
-                  <button className={`flex items-center gap-1 transition-colors ${
+                  <button className={`flex items-center gap-1 transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-[#0ea5e9]/50 focus-visible:ring-offset-2 rounded-lg ${
                     isActive('/oplossingen') ? 'text-[#0ea5e9]' : 'text-gray-700 dark:text-gray-300 hover:text-[#0ea5e9]'
                   }`}>
                     Oplossingen
@@ -80,19 +80,19 @@ export function Header() {
                   </button>
                   <div className="absolute left-0 top-full pt-2 w-64 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
                     <div className="bg-white dark:bg-gray-800 shadow-lg dark:shadow-gray-900/50 rounded-lg border border-gray-100 dark:border-gray-700 py-2">
-                      <Link to="/oplossingen" className="block px-4 py-2 hover:bg-gray-50 dark:hover:bg-gray-700 text-gray-700 dark:text-gray-300 hover:text-[#0ea5e9]">
+                      <Link to="/oplossingen" className="block px-4 py-2 hover:bg-gray-50 dark:hover:bg-gray-700 text-gray-700 dark:text-gray-300 hover:text-[#0ea5e9] focus:outline-none focus-visible:bg-gray-50 dark:focus-visible:bg-gray-700">
                         Alle oplossingen
                       </Link>
-                      <Link to="/oplossingen/werkplekbeheer" className="block px-4 py-2 hover:bg-gray-50 dark:hover:bg-gray-700 text-gray-700 dark:text-gray-300 hover:text-[#0ea5e9]">
+                      <Link to="/oplossingen/werkplekbeheer" className="block px-4 py-2 hover:bg-gray-50 dark:hover:bg-gray-700 text-gray-700 dark:text-gray-300 hover:text-[#0ea5e9] focus:outline-none focus-visible:bg-gray-50 dark:focus-visible:bg-gray-700">
                         Werkplekbeheer
                       </Link>
-                      <Link to="/oplossingen/cloud-microsoft-365" className="block px-4 py-2 hover:bg-gray-50 dark:hover:bg-gray-700 text-gray-700 dark:text-gray-300 hover:text-[#0ea5e9]">
+                      <Link to="/oplossingen/cloud-microsoft-365" className="block px-4 py-2 hover:bg-gray-50 dark:hover:bg-gray-700 text-gray-700 dark:text-gray-300 hover:text-[#0ea5e9] focus:outline-none focus-visible:bg-gray-50 dark:focus-visible:bg-gray-700">
                         Cloud & Microsoft 365
                       </Link>
-                      <Link to="/oplossingen/netwerk-beveiliging" className="block px-4 py-2 hover:bg-gray-50 dark:hover:bg-gray-700 text-gray-700 dark:text-gray-300 hover:text-[#0ea5e9]">
+                      <Link to="/oplossingen/netwerk-beveiliging" className="block px-4 py-2 hover:bg-gray-50 dark:hover:bg-gray-700 text-gray-700 dark:text-gray-300 hover:text-[#0ea5e9] focus:outline-none focus-visible:bg-gray-50 dark:focus-visible:bg-gray-700">
                         Netwerk & Beveiliging
                       </Link>
-                      <Link to="/oplossingen/it-support" className="block px-4 py-2 hover:bg-gray-50 dark:hover:bg-gray-700 text-gray-700 dark:text-gray-300 hover:text-[#0ea5e9]">
+                      <Link to="/oplossingen/it-support" className="block px-4 py-2 hover:bg-gray-50 dark:hover:bg-gray-700 text-gray-700 dark:text-gray-300 hover:text-[#0ea5e9] focus:outline-none focus-visible:bg-gray-50 dark:focus-visible:bg-gray-700">
                         IT-Support & Monitoring
                       </Link>
                     </div>
@@ -100,7 +100,7 @@ export function Header() {
                 </div>
 
                 <div className="group relative">
-                  <button className={`flex items-center gap-1 transition-colors ${
+                  <button className={`flex items-center gap-1 transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-[#0ea5e9]/50 focus-visible:ring-offset-2 rounded-lg ${
                     isActive('/branches') ? 'text-[#0ea5e9]' : 'text-gray-700 dark:text-gray-300 hover:text-[#0ea5e9]'
                   }`}>
                     Branches
@@ -108,19 +108,19 @@ export function Header() {
                   </button>
                   <div className="absolute left-0 top-full pt-2 w-64 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
                     <div className="bg-white dark:bg-gray-800 shadow-lg dark:shadow-gray-900/50 rounded-lg border border-gray-100 dark:border-gray-700 py-2">
-                      <Link to="/branches" className="block px-4 py-2 hover:bg-gray-50 dark:hover:bg-gray-700 text-gray-700 dark:text-gray-300 hover:text-[#0ea5e9]">
+                      <Link to="/branches" className="block px-4 py-2 hover:bg-gray-50 dark:hover:bg-gray-700 text-gray-700 dark:text-gray-300 hover:text-[#0ea5e9] focus:outline-none focus-visible:bg-gray-50 dark:focus-visible:bg-gray-700">
                         Alle branches
                       </Link>
-                      <Link to="/branches/zakelijke-dienstverlening" className="block px-4 py-2 hover:bg-gray-50 dark:hover:bg-gray-700 text-gray-700 dark:text-gray-300 hover:text-[#0ea5e9]">
+                      <Link to="/branches/zakelijke-dienstverlening" className="block px-4 py-2 hover:bg-gray-50 dark:hover:bg-gray-700 text-gray-700 dark:text-gray-300 hover:text-[#0ea5e9] focus:outline-none focus-visible:bg-gray-50 dark:focus-visible:bg-gray-700">
                         Zakelijke dienstverlening
                       </Link>
-                      <Link to="/branches/zorg-onderwijs" className="block px-4 py-2 hover:bg-gray-50 dark:hover:bg-gray-700 text-gray-700 dark:text-gray-300 hover:text-[#0ea5e9]">
+                      <Link to="/branches/zorg-onderwijs" className="block px-4 py-2 hover:bg-gray-50 dark:hover:bg-gray-700 text-gray-700 dark:text-gray-300 hover:text-[#0ea5e9] focus:outline-none focus-visible:bg-gray-50 dark:focus-visible:bg-gray-700">
                         Zorg & Onderwijs
                       </Link>
-                      <Link to="/branches/retail-logistiek" className="block px-4 py-2 hover:bg-gray-50 dark:hover:bg-gray-700 text-gray-700 dark:text-gray-300 hover:text-[#0ea5e9]">
+                      <Link to="/branches/retail-logistiek" className="block px-4 py-2 hover:bg-gray-50 dark:hover:bg-gray-700 text-gray-700 dark:text-gray-300 hover:text-[#0ea5e9] focus:outline-none focus-visible:bg-gray-50 dark:focus-visible:bg-gray-700">
                         Retail & Logistiek
                       </Link>
-                      <Link to="/branches/bouw-industrie" className="block px-4 py-2 hover:bg-gray-50 dark:hover:bg-gray-700 text-gray-700 dark:text-gray-300 hover:text-[#0ea5e9]">
+                      <Link to="/branches/bouw-industrie" className="block px-4 py-2 hover:bg-gray-50 dark:hover:bg-gray-700 text-gray-700 dark:text-gray-300 hover:text-[#0ea5e9] focus:outline-none focus-visible:bg-gray-50 dark:focus-visible:bg-gray-700">
                         Bouw & Industrie
                       </Link>
                     </div>
@@ -128,7 +128,7 @@ export function Header() {
                 </div>
 
                 <div className="group relative">
-                  <button className={`flex items-center gap-1 transition-colors ${
+                  <button className={`flex items-center gap-1 transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-[#0ea5e9]/50 focus-visible:ring-offset-2 rounded-lg ${
                     isActive('/bedrijfsinformatie') ? 'text-[#0ea5e9]' : 'text-gray-700 dark:text-gray-300 hover:text-[#0ea5e9]'
                   }`}>
                     Bedrijfsinformatie
@@ -136,16 +136,16 @@ export function Header() {
                   </button>
                   <div className="absolute left-0 top-full pt-2 w-64 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
                     <div className="bg-white dark:bg-gray-800 shadow-lg dark:shadow-gray-900/50 rounded-lg border border-gray-100 dark:border-gray-700 py-2">
-                      <Link to="/bedrijfsinformatie/over-ons" className="block px-4 py-2 hover:bg-gray-50 dark:hover:bg-gray-700 text-gray-700 dark:text-gray-300 hover:text-[#0ea5e9]">
+                      <Link to="/bedrijfsinformatie/over-ons" className="block px-4 py-2 hover:bg-gray-50 dark:hover:bg-gray-700 text-gray-700 dark:text-gray-300 hover:text-[#0ea5e9] focus:outline-none focus-visible:bg-gray-50 dark:focus-visible:bg-gray-700">
                         Over Systeemlink
                       </Link>
-                      <Link to="/bedrijfsinformatie/partners-certificeringen" className="block px-4 py-2 hover:bg-gray-50 dark:hover:bg-gray-700 text-gray-700 dark:text-gray-300 hover:text-[#0ea5e9]">
+                      <Link to="/bedrijfsinformatie/partners-certificeringen" className="block px-4 py-2 hover:bg-gray-50 dark:hover:bg-gray-700 text-gray-700 dark:text-gray-300 hover:text-[#0ea5e9] focus:outline-none focus-visible:bg-gray-50 dark:focus-visible:bg-gray-700">
                         Partners
                       </Link>
-                      <Link to="/bedrijfsinformatie/vacatures" className="block px-4 py-2 hover:bg-gray-50 dark:hover:bg-gray-700 text-gray-700 dark:text-gray-300 hover:text-[#0ea5e9]">
+                      <Link to="/bedrijfsinformatie/vacatures" className="block px-4 py-2 hover:bg-gray-50 dark:hover:bg-gray-700 text-gray-700 dark:text-gray-300 hover:text-[#0ea5e9] focus:outline-none focus-visible:bg-gray-50 dark:focus-visible:bg-gray-700">
                         Vacatures
                       </Link>
-                      <Link to="/bedrijfsinformatie/contact" className="block px-4 py-2 hover:bg-gray-50 dark:hover:bg-gray-700 text-gray-700 dark:text-gray-300 hover:text-[#0ea5e9]">
+                      <Link to="/bedrijfsinformatie/contact" className="block px-4 py-2 hover:bg-gray-50 dark:hover:bg-gray-700 text-gray-700 dark:text-gray-300 hover:text-[#0ea5e9] focus:outline-none focus-visible:bg-gray-50 dark:focus-visible:bg-gray-700">
                         Contact
                       </Link>
                     </div>
@@ -154,7 +154,7 @@ export function Header() {
               </div>
 
               {/* Center: Logo */}
-              <Link to="/" className="flex items-center justify-center">
+              <Link to="/" className="flex items-center justify-center focus:outline-none focus-visible:ring-2 focus-visible:ring-[#0ea5e9]/50 focus-visible:ring-offset-2 rounded-lg">
                 <img src={logo} alt="Systeemlink" className="h-[52px]" />
               </Link>
 
@@ -162,7 +162,7 @@ export function Header() {
               <div className="flex items-center gap-3 justify-end">
                 <button
                   onClick={toggleTheme}
-                  className="p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors text-gray-700 dark:text-gray-300 hover:text-[#0ea5e9]"
+                  className="p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors text-gray-700 dark:text-gray-300 hover:text-[#0ea5e9] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#0ea5e9]/50 focus-visible:ring-offset-2"
                   aria-label="Toggle dark mode"
                 >
                   {theme === 'dark' ? (
@@ -172,7 +172,7 @@ export function Header() {
                   )}
                 </button>
                 <Link to="/it-check">
-                  <Button className="bg-[#0ea5e9] hover:bg-[#0284c7] rounded-full">
+                  <Button className="bg-[#0ea5e9] hover:bg-[#0284c7] rounded-full focus:outline-none focus-visible:ring-2 focus-visible:ring-[#0ea5e9]/50 focus-visible:ring-offset-2">
                     Gratis IT-check
                   </Button>
                 </Link>
@@ -184,7 +184,7 @@ export function Header() {
               {/* Left: Menu Icon */}
               <button
                 onClick={() => setMobileMenuOpen(true)}
-                className="p-2.5 text-gray-700 dark:text-gray-300 hover:text-[#0ea5e9] transition-colors z-10 rounded-lg border-2 border-gray-200 dark:border-gray-700 hover:border-[#0ea5e9] -ml-2"
+                className="p-2.5 text-gray-700 dark:text-gray-300 hover:text-[#0ea5e9] transition-colors z-10 rounded-lg border-2 border-gray-200 dark:border-gray-700 hover:border-[#0ea5e9] -ml-2 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#0ea5e9]/50 focus-visible:ring-offset-2"
                 aria-label="Open menu"
               >
                 <svg className="w-6 h-6" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24">
@@ -193,7 +193,7 @@ export function Header() {
               </button>
 
               {/* Center: Logo - Absolutely Centered */}
-              <Link to="/" className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
+              <Link to="/" className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#0ea5e9]/50 focus-visible:ring-offset-2 rounded-lg">
                 <img src={logo} alt="Systeemlink" className="h-[44px]" />
               </Link>
 
@@ -201,7 +201,7 @@ export function Header() {
               <div className="flex items-center z-10 ml-auto -mr-2">
                 <Link
                   to="/oplossingen/it-support"
-                  className="p-2.5 text-gray-700 dark:text-gray-300 hover:text-[#0ea5e9] transition-colors rounded-lg border-2 border-gray-200 dark:border-gray-700 hover:border-[#0ea5e9]"
+                  className="p-2.5 text-gray-700 dark:text-gray-300 hover:text-[#0ea5e9] transition-colors rounded-lg border-2 border-gray-200 dark:border-gray-700 hover:border-[#0ea5e9] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#0ea5e9]/50 focus-visible:ring-offset-2"
                   aria-label="Helpdesk"
                 >
                   <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" strokeWidth="0.5">
@@ -242,7 +242,7 @@ export function Header() {
                 </div>
                 <button
                   onClick={() => setMobileMenuOpen(false)}
-                  className="p-2 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-lg transition-colors"
+                  className="p-2 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-lg transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-[#0ea5e9]/50"
                   aria-label="Sluit menu"
                 >
                   <X className="w-6 h-6" />
@@ -494,7 +494,7 @@ export function Header() {
                 >
                   <button
                     onClick={toggleTheme}
-                    className="w-full flex items-center justify-between p-4 rounded-xl bg-gray-50 dark:bg-gray-800 hover:bg-gray-100 dark:hover:bg-gray-700 transition-all group"
+                    className="w-full flex items-center justify-between p-4 rounded-xl bg-gray-50 dark:bg-gray-800 hover:bg-gray-100 dark:hover:bg-gray-700 transition-all group focus:outline-none focus-visible:ring-2 focus-visible:ring-[#0ea5e9]/50"
                   >
                     <div className="flex items-center gap-3">
                       <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-amber-500/10 to-amber-500/5 dark:from-blue-500/10 dark:to-blue-500/5 flex items-center justify-center group-hover:scale-110 transition-transform">
