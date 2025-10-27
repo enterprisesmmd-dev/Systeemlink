@@ -74,8 +74,8 @@ export function Header() {
                     Oplossingen
                     <ChevronDown className="w-5 h-5" strokeWidth={2.5} />
                   </button>
-                  <div className="absolute left-0 top-full mt-2 w-64 bg-white dark:bg-gray-800 shadow-lg dark:shadow-gray-900/50 rounded-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 border border-gray-100 dark:border-gray-700">
-                    <div className="py-2">
+                  <div className="absolute left-0 top-full pt-2 w-64 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
+                    <div className="bg-white dark:bg-gray-800 shadow-lg dark:shadow-gray-900/50 rounded-lg border border-gray-100 dark:border-gray-700 py-2">
                       <Link to="/oplossingen" className="block px-4 py-2 hover:bg-gray-50 dark:hover:bg-gray-700 text-gray-700 dark:text-gray-300 hover:text-[#0ea5e9]">
                         Alle oplossingen
                       </Link>
@@ -102,8 +102,8 @@ export function Header() {
                     Branches
                     <ChevronDown className="w-5 h-5" strokeWidth={2.5} />
                   </button>
-                  <div className="absolute left-0 top-full mt-2 w-64 bg-white dark:bg-gray-800 shadow-lg dark:shadow-gray-900/50 rounded-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 border border-gray-100 dark:border-gray-700">
-                    <div className="py-2">
+                  <div className="absolute left-0 top-full pt-2 w-64 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
+                    <div className="bg-white dark:bg-gray-800 shadow-lg dark:shadow-gray-900/50 rounded-lg border border-gray-100 dark:border-gray-700 py-2">
                       <Link to="/branches" className="block px-4 py-2 hover:bg-gray-50 dark:hover:bg-gray-700 text-gray-700 dark:text-gray-300 hover:text-[#0ea5e9]">
                         Alle branches
                       </Link>
@@ -130,8 +130,8 @@ export function Header() {
                     Bedrijfsinformatie
                     <ChevronDown className="w-5 h-5" strokeWidth={2.5} />
                   </button>
-                  <div className="absolute left-0 top-full mt-2 w-64 bg-white dark:bg-gray-800 shadow-lg dark:shadow-gray-900/50 rounded-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 border border-gray-100 dark:border-gray-700">
-                    <div className="py-2">
+                  <div className="absolute left-0 top-full pt-2 w-64 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
+                    <div className="bg-white dark:bg-gray-800 shadow-lg dark:shadow-gray-900/50 rounded-lg border border-gray-100 dark:border-gray-700 py-2">
                       <Link to="/bedrijfsinformatie/over-ons" className="block px-4 py-2 hover:bg-gray-50 dark:hover:bg-gray-700 text-gray-700 dark:text-gray-300 hover:text-[#0ea5e9]">
                         Over Systeemlink
                       </Link>
