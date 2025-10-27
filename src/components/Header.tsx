@@ -1,6 +1,6 @@
 import { Link, useLocation } from 'react-router-dom';
 import { useState, useEffect } from 'react';
-import { Menu, X, ChevronDown, Home, Phone, Headphones, Mail, Moon, Sun } from 'lucide-react';
+import { Menu, X, ChevronDown, Home, Phone, Headphones, Mail, Moon, Sun, Settings, Briefcase, Building2, Users, Zap, Cloud, Shield, HeadphonesIcon, ChevronRight, Sparkles } from 'lucide-react';
 import { Button } from './ui/button';
 import { usePrefetch } from '../hooks/usePrefetch';
 import { useTheme } from '../hooks/useTheme';
@@ -251,177 +251,274 @@ export function Header() {
 
               {/* Menu Content */}
               <div className="p-6">
-                {/* CTA Button */}
-                <Link to="/it-check" className="block mb-6">
-                  <Button className="w-full bg-[#0ea5e9] hover:bg-[#0284c7] rounded-full h-12">
-                    🎯 Gratis IT-check aanvragen
-                  </Button>
-                </Link>
-
-                {/* Navigation */}
-                <nav className="space-y-1">
-                  {/* Home */}
-                  <Link
-                    to="/"
-                    className="flex items-center gap-3 px-4 py-3 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-800 text-gray-700 dark:text-gray-300 hover:text-[#0ea5e9] transition-colors"
+                {/* Quick Actions Grid */}
+                <div className="grid grid-cols-2 gap-3 mb-6">
+                  <Link 
+                    to="/it-check" 
+                    className="group relative overflow-hidden rounded-2xl bg-gradient-to-br from-[#0ea5e9] to-[#0284c7] p-4 text-white shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
                   >
-                    <Home className="w-5 h-5" />
-                    <span>Home</span>
+                    <div className="absolute inset-0 bg-white/10 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                    <div className="relative">
+                      <Sparkles className="w-6 h-6 mb-2" />
+                      <p className="text-sm font-medium">Gratis IT-check</p>
+                    </div>
                   </Link>
+                  
+                  <Link 
+                    to="/bedrijfsinformatie/contact"
+                    className="group relative overflow-hidden rounded-2xl bg-gradient-to-br from-gray-100 to-gray-50 dark:from-gray-800 dark:to-gray-700 p-4 shadow-md hover:shadow-lg transition-all duration-300 hover:scale-105"
+                  >
+                    <div className="absolute inset-0 bg-[#0ea5e9]/10 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                    <div className="relative">
+                      <Mail className="w-6 h-6 mb-2 text-gray-700 dark:text-gray-300" />
+                      <p className="text-sm font-medium text-gray-700 dark:text-gray-300">Contact</p>
+                    </div>
+                  </Link>
+                </div>
 
-                  {/* Oplossingen */}
-                  <div className="space-y-1">
+                {/* Navigation with Icons & Animations */}
+                <nav className="space-y-2">
+                  {/* Home */}
+                  <motion.div
+                    initial={{ opacity: 0, x: -20 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ delay: 0.1 }}
+                  >
                     <Link
-                      to="/oplossingen"
-                      className="flex items-center gap-3 px-4 py-3 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors"
+                      to="/"
+                      className="flex items-center justify-between group px-4 py-3.5 rounded-xl hover:bg-gradient-to-r hover:from-[#0ea5e9]/10 hover:to-transparent transition-all duration-200"
                     >
-                      <span className="text-gray-900 dark:text-gray-100">Oplossingen</span>
+                      <div className="flex items-center gap-3">
+                        <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-[#0ea5e9]/10 to-[#0ea5e9]/5 flex items-center justify-center group-hover:scale-110 transition-transform">
+                          <Home className="w-5 h-5 text-[#0ea5e9]" />
+                        </div>
+                        <span className="font-medium text-gray-900 dark:text-gray-100">Home</span>
+                      </div>
+                      <ChevronRight className="w-4 h-4 text-gray-400 opacity-0 group-hover:opacity-100 transition-opacity" />
                     </Link>
-                    <div className="pl-8 space-y-1">
+                  </motion.div>
+
+                  {/* Oplossingen Section */}
+                  <motion.div
+                    initial={{ opacity: 0, x: -20 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ delay: 0.15 }}
+                    className="space-y-2"
+                  >
+                    <div className="px-4 py-2 flex items-center gap-2">
+                      <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-purple-500/10 to-purple-500/5 flex items-center justify-center">
+                        <Settings className="w-4 h-4 text-purple-600 dark:text-purple-400" />
+                      </div>
+                      <span className="text-sm font-semibold text-gray-500 dark:text-gray-400 uppercase tracking-wide">Oplossingen</span>
+                    </div>
+                    <div className="ml-4 space-y-1 border-l-2 border-gray-100 dark:border-gray-800 pl-4">
+                      <Link
+                        to="/oplossingen"
+                        className="flex items-center justify-between group px-3 py-2.5 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-800 transition-all"
+                      >
+                        <span className="text-sm text-gray-700 dark:text-gray-300 group-hover:text-[#0ea5e9]">Alle oplossingen</span>
+                        <ChevronRight className="w-3 h-3 text-gray-400 opacity-0 group-hover:opacity-100 transition-opacity" />
+                      </Link>
                       <Link
                         to="/oplossingen/werkplekbeheer"
-                        className="block px-4 py-2 text-sm text-gray-600 dark:text-gray-400 hover:text-[#0ea5e9] hover:bg-gray-50 dark:hover:bg-gray-800 rounded-lg transition-colors"
+                        className="flex items-center gap-2 group px-3 py-2.5 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-800 transition-all"
                       >
-                        Werkplekbeheer
+                        <Briefcase className="w-4 h-4 text-gray-400 group-hover:text-[#0ea5e9]" />
+                        <span className="text-sm text-gray-700 dark:text-gray-300 group-hover:text-[#0ea5e9]">Werkplekbeheer</span>
                       </Link>
                       <Link
                         to="/oplossingen/cloud-microsoft-365"
-                        className="block px-4 py-2 text-sm text-gray-600 dark:text-gray-400 hover:text-[#0ea5e9] hover:bg-gray-50 dark:hover:bg-gray-800 rounded-lg transition-colors"
+                        className="flex items-center gap-2 group px-3 py-2.5 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-800 transition-all"
                       >
-                        Cloud & Microsoft 365
+                        <Cloud className="w-4 h-4 text-gray-400 group-hover:text-[#0ea5e9]" />
+                        <span className="text-sm text-gray-700 dark:text-gray-300 group-hover:text-[#0ea5e9]">Cloud & Microsoft 365</span>
                       </Link>
                       <Link
                         to="/oplossingen/netwerk-beveiliging"
-                        className="block px-4 py-2 text-sm text-gray-600 dark:text-gray-400 hover:text-[#0ea5e9] hover:bg-gray-50 dark:hover:bg-gray-800 rounded-lg transition-colors"
+                        className="flex items-center gap-2 group px-3 py-2.5 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-800 transition-all"
                       >
-                        Netwerk & Beveiliging
+                        <Shield className="w-4 h-4 text-gray-400 group-hover:text-[#0ea5e9]" />
+                        <span className="text-sm text-gray-700 dark:text-gray-300 group-hover:text-[#0ea5e9]">Netwerk & Beveiliging</span>
                       </Link>
                       <Link
                         to="/oplossingen/it-support"
-                        className="block px-4 py-2 text-sm text-gray-600 dark:text-gray-400 hover:text-[#0ea5e9] hover:bg-gray-50 dark:hover:bg-gray-800 rounded-lg transition-colors"
+                        className="flex items-center gap-2 group px-3 py-2.5 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-800 transition-all"
                       >
-                        IT-Support & Monitoring
+                        <HeadphonesIcon className="w-4 h-4 text-gray-400 group-hover:text-[#0ea5e9]" />
+                        <span className="text-sm text-gray-700 dark:text-gray-300 group-hover:text-[#0ea5e9]">IT-Support & Monitoring</span>
                       </Link>
                     </div>
-                  </div>
+                  </motion.div>
 
-                  {/* Branches */}
-                  <div className="space-y-1">
-                    <Link
-                      to="/branches"
-                      className="flex items-center gap-3 px-4 py-3 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors"
-                    >
-                      <span className="text-gray-900 dark:text-gray-100">Branches</span>
-                    </Link>
-                    <div className="pl-8 space-y-1">
+                  {/* Branches Section */}
+                  <motion.div
+                    initial={{ opacity: 0, x: -20 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ delay: 0.2 }}
+                    className="space-y-2"
+                  >
+                    <div className="px-4 py-2 flex items-center gap-2">
+                      <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-blue-500/10 to-blue-500/5 flex items-center justify-center">
+                        <Building2 className="w-4 h-4 text-blue-600 dark:text-blue-400" />
+                      </div>
+                      <span className="text-sm font-semibold text-gray-500 dark:text-gray-400 uppercase tracking-wide">Branches</span>
+                    </div>
+                    <div className="ml-4 space-y-1 border-l-2 border-gray-100 dark:border-gray-800 pl-4">
+                      <Link
+                        to="/branches"
+                        className="flex items-center justify-between group px-3 py-2.5 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-800 transition-all"
+                      >
+                        <span className="text-sm text-gray-700 dark:text-gray-300 group-hover:text-[#0ea5e9]">Alle branches</span>
+                        <ChevronRight className="w-3 h-3 text-gray-400 opacity-0 group-hover:opacity-100 transition-opacity" />
+                      </Link>
                       <Link
                         to="/branches/zakelijke-dienstverlening"
-                        className="block px-4 py-2 text-sm text-gray-600 dark:text-gray-400 hover:text-[#0ea5e9] hover:bg-gray-50 dark:hover:bg-gray-800 rounded-lg transition-colors"
+                        className="block px-3 py-2.5 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-800 text-sm text-gray-700 dark:text-gray-300 hover:text-[#0ea5e9] transition-all"
                       >
                         Zakelijke dienstverlening
                       </Link>
                       <Link
                         to="/branches/zorg-onderwijs"
-                        className="block px-4 py-2 text-sm text-gray-600 dark:text-gray-400 hover:text-[#0ea5e9] hover:bg-gray-50 dark:hover:bg-gray-800 rounded-lg transition-colors"
+                        className="block px-3 py-2.5 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-800 text-sm text-gray-700 dark:text-gray-300 hover:text-[#0ea5e9] transition-all"
                       >
                         Zorg & Onderwijs
                       </Link>
                       <Link
                         to="/branches/retail-logistiek"
-                        className="block px-4 py-2 text-sm text-gray-600 dark:text-gray-400 hover:text-[#0ea5e9] hover:bg-gray-50 dark:hover:bg-gray-800 rounded-lg transition-colors"
+                        className="block px-3 py-2.5 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-800 text-sm text-gray-700 dark:text-gray-300 hover:text-[#0ea5e9] transition-all"
                       >
                         Retail & Logistiek
                       </Link>
                       <Link
                         to="/branches/bouw-industrie"
-                        className="block px-4 py-2 text-sm text-gray-600 dark:text-gray-400 hover:text-[#0ea5e9] hover:bg-gray-50 dark:hover:bg-gray-800 rounded-lg transition-colors"
+                        className="block px-3 py-2.5 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-800 text-sm text-gray-700 dark:text-gray-300 hover:text-[#0ea5e9] transition-all"
                       >
                         Bouw & Industrie
                       </Link>
                     </div>
-                  </div>
+                  </motion.div>
 
-                  {/* Bedrijfsinformatie */}
-                  <div className="space-y-1">
-                    <div className="flex items-center gap-3 px-4 py-3">
-                      <span className="text-gray-900 dark:text-gray-100">Bedrijfsinformatie</span>
+                  {/* Bedrijfsinformatie Section */}
+                  <motion.div
+                    initial={{ opacity: 0, x: -20 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ delay: 0.25 }}
+                    className="space-y-2"
+                  >
+                    <div className="px-4 py-2 flex items-center gap-2">
+                      <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-green-500/10 to-green-500/5 flex items-center justify-center">
+                        <Users className="w-4 h-4 text-green-600 dark:text-green-400" />
+                      </div>
+                      <span className="text-sm font-semibold text-gray-500 dark:text-gray-400 uppercase tracking-wide">Bedrijfsinformatie</span>
                     </div>
-                    <div className="pl-8 space-y-1">
+                    <div className="ml-4 space-y-1 border-l-2 border-gray-100 dark:border-gray-800 pl-4">
                       <Link
                         to="/bedrijfsinformatie/over-ons"
-                        className="block px-4 py-2 text-sm text-gray-600 dark:text-gray-400 hover:text-[#0ea5e9] hover:bg-gray-50 dark:hover:bg-gray-800 rounded-lg transition-colors"
+                        className="block px-3 py-2.5 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-800 text-sm text-gray-700 dark:text-gray-300 hover:text-[#0ea5e9] transition-all"
                       >
                         Over Systeemlink
                       </Link>
                       <Link
                         to="/bedrijfsinformatie/partners-certificeringen"
-                        className="block px-4 py-2 text-sm text-gray-600 dark:text-gray-400 hover:text-[#0ea5e9] hover:bg-gray-50 dark:hover:bg-gray-800 rounded-lg transition-colors"
+                        className="block px-3 py-2.5 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-800 text-sm text-gray-700 dark:text-gray-300 hover:text-[#0ea5e9] transition-all"
                       >
                         Partners
                       </Link>
                       <Link
                         to="/bedrijfsinformatie/vacatures"
-                        className="block px-4 py-2 text-sm text-gray-600 dark:text-gray-400 hover:text-[#0ea5e9] hover:bg-gray-50 dark:hover:bg-gray-800 rounded-lg transition-colors"
+                        className="block px-3 py-2.5 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-800 text-sm text-gray-700 dark:text-gray-300 hover:text-[#0ea5e9] transition-all"
                       >
                         Vacatures
                       </Link>
                       <Link
                         to="/bedrijfsinformatie/contact"
-                        className="block px-4 py-2 text-sm text-gray-600 dark:text-gray-400 hover:text-[#0ea5e9] hover:bg-gray-50 dark:hover:bg-gray-800 rounded-lg transition-colors"
+                        className="block px-3 py-2.5 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-800 text-sm text-gray-700 dark:text-gray-300 hover:text-[#0ea5e9] transition-all"
                       >
                         Contact
                       </Link>
                     </div>
-                  </div>
+                  </motion.div>
                 </nav>
 
-                {/* Contact Info */}
-                <div className="mt-8 p-4 bg-gradient-to-br from-indigo-50 to-sky-50 dark:from-indigo-950/30 dark:to-sky-950/30 rounded-xl border border-indigo-100 dark:border-indigo-900">
-                  <p className="text-sm text-gray-600 dark:text-gray-400 mb-3">Neem direct contact op</p>
-                  <div className="space-y-2">
-                    <a
-                      href="tel:+31613777733"
-                      className="flex items-center gap-3 text-gray-900 dark:text-gray-100 hover:text-[#0ea5e9] transition-colors"
-                    >
-                      <Phone className="w-4 h-4" />
-                      <span>06 13777733</span>
-                    </a>
-                    <a
-                      href="mailto:info@systeemlink.nl"
-                      className="flex items-center gap-3 text-gray-900 dark:text-gray-100 hover:text-[#0ea5e9] transition-colors text-sm"
-                    >
-                      <Mail className="w-4 h-4" />
-                      <span>info@systeemlink.nl</span>
-                    </a>
-                  </div>
-                </div>
+                {/* Divider */}
+                <div className="my-6 h-px bg-gradient-to-r from-transparent via-gray-200 dark:via-gray-700 to-transparent"></div>
 
-                {/* Dark Mode Toggle */}
-                <div className="mt-6 p-4 bg-gray-50 dark:bg-gray-800 rounded-xl border border-gray-200 dark:border-gray-700">
-                  <div className="flex items-center justify-between">
+                {/* Contact Card - Modern Design */}
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.3 }}
+                  className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-indigo-50 via-sky-50 to-blue-50 dark:from-indigo-950/30 dark:via-sky-950/30 dark:to-blue-950/30 p-5 border border-indigo-100/50 dark:border-indigo-900/50"
+                >
+                  <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-[#0ea5e9]/20 to-transparent rounded-full blur-2xl"></div>
+                  <div className="relative">
+                    <div className="flex items-center gap-2 mb-3">
+                      <div className="w-2 h-2 rounded-full bg-green-500 animate-pulse"></div>
+                      <p className="text-sm font-medium text-gray-700 dark:text-gray-300">Direct beschikbaar</p>
+                    </div>
+                    <div className="space-y-3">
+                      <a
+                        href="tel:+31613777733"
+                        className="flex items-center gap-3 group"
+                      >
+                        <div className="w-10 h-10 rounded-xl bg-white dark:bg-gray-800 shadow-sm flex items-center justify-center group-hover:scale-110 transition-transform">
+                          <Phone className="w-4 h-4 text-[#0ea5e9]" />
+                        </div>
+                        <div>
+                          <p className="text-xs text-gray-500 dark:text-gray-400">Bel ons direct</p>
+                          <p className="font-medium text-gray-900 dark:text-gray-100 group-hover:text-[#0ea5e9] transition-colors">06 13777733</p>
+                        </div>
+                      </a>
+                      <a
+                        href="mailto:info@systeemlink.nl"
+                        className="flex items-center gap-3 group"
+                      >
+                        <div className="w-10 h-10 rounded-xl bg-white dark:bg-gray-800 shadow-sm flex items-center justify-center group-hover:scale-110 transition-transform">
+                          <Mail className="w-4 h-4 text-[#0ea5e9]" />
+                        </div>
+                        <div>
+                          <p className="text-xs text-gray-500 dark:text-gray-400">Email ons</p>
+                          <p className="text-sm font-medium text-gray-900 dark:text-gray-100 group-hover:text-[#0ea5e9] transition-colors">info@systeemlink.nl</p>
+                        </div>
+                      </a>
+                    </div>
+                  </div>
+                </motion.div>
+
+                {/* Dark Mode Toggle - Redesigned */}
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.35 }}
+                  className="mt-5"
+                >
+                  <button
+                    onClick={toggleTheme}
+                    className="w-full flex items-center justify-between p-4 rounded-xl bg-gray-50 dark:bg-gray-800 hover:bg-gray-100 dark:hover:bg-gray-700 transition-all group"
+                  >
                     <div className="flex items-center gap-3">
-                      {theme === 'dark' ? (
-                        <Moon className="w-5 h-5 text-gray-900 dark:text-gray-100" />
-                      ) : (
-                        <Sun className="w-5 h-5 text-gray-900 dark:text-gray-100" />
-                      )}
-                      <span className="text-sm text-gray-900 dark:text-gray-100">
+                      <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-amber-500/10 to-amber-500/5 dark:from-blue-500/10 dark:to-blue-500/5 flex items-center justify-center group-hover:scale-110 transition-transform">
+                        {theme === 'dark' ? (
+                          <Moon className="w-5 h-5 text-blue-600 dark:text-blue-400" />
+                        ) : (
+                          <Sun className="w-5 h-5 text-amber-600" />
+                        )}
+                      </div>
+                      <span className="font-medium text-gray-900 dark:text-gray-100">
                         {theme === 'dark' ? 'Donkere modus' : 'Lichte modus'}
                       </span>
                     </div>
-                    <button
-                      onClick={toggleTheme}
-                      className="relative inline-flex h-7 w-12 items-center rounded-full transition-colors focus:outline-none focus:ring-2 focus:ring-sky-500 focus:ring-offset-2 dark:focus:ring-offset-gray-900 bg-gray-300 dark:bg-sky-600"
-                      aria-label="Toggle dark mode"
-                    >
+                    <div className={`relative inline-flex h-7 w-12 items-center rounded-full transition-colors ${
+                      theme === 'dark' ? 'bg-[#0ea5e9]' : 'bg-gray-300'
+                    }`}>
                       <span
-                        className={`inline-block h-5 w-5 transform rounded-full bg-white transition-transform ${
+                        className={`inline-block h-5 w-5 transform rounded-full bg-white shadow-lg transition-transform ${
                           theme === 'dark' ? 'translate-x-6' : 'translate-x-1'
                         }`}
                       />
-                    </button>
-                  </div>
-                </div>
+                    </div>
+                  </button>
+                </motion.div>
               </div>
             </motion.div>
           </>
