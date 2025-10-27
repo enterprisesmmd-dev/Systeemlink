@@ -6,14 +6,18 @@ import { usePrefetch } from '../hooks/usePrefetch';
 import { useTheme } from '../hooks/useTheme';
 import { motion, AnimatePresence } from 'motion/react';
 
-// Use external URL for header logo
-const logo = 'https://i.ibb.co/Gv0xYGJB/4cc1dfdabb026e08ad887f3b3cf0ef7043a211cb-d-WZj-J9q0.png';
+// Logo URLs for light and dark mode
+const logoLight = 'https://i.ibb.co/Gv0xYGJB/4cc1dfdabb026e08ad887f3b3cf0ef7043a211cb-d-WZj-J9q0.png';
+const logoDark = 'https://i.ibb.co/NGFgCxH/4cc1dfdabb026e08ad887f3b3cf0ef7043a211cb-d-WZj-J9q0white.png';
 
 export function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const location = useLocation();
   const { theme, toggleTheme } = useTheme();
+
+  // Get the appropriate logo based on theme
+  const logo = theme === 'dark' ? logoDark : logoLight;
 
   // Prefetch belangrijke pagina's voor snellere navigatie
   usePrefetch([
