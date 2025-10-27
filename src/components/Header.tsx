@@ -180,10 +180,10 @@ export function Header() {
               {/* Left: Menu Icon */}
               <button
                 onClick={() => setMobileMenuOpen(true)}
-                className="p-2 text-gray-700 dark:text-gray-300 hover:text-[#0ea5e9] transition-colors z-10"
+                className="p-2.5 text-gray-700 dark:text-gray-300 hover:text-[#0ea5e9] transition-colors z-10 rounded-lg border-2 border-gray-200 dark:border-gray-700 hover:border-[#0ea5e9] -ml-2"
                 aria-label="Open menu"
               >
-                <svg className="w-7 h-7" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24">
+                <svg className="w-6 h-6" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24">
                   <path d="M3 6h18M3 12h18M3 18h18"/>
                 </svg>
               </button>
@@ -193,26 +193,17 @@ export function Header() {
                 <img src={logo} alt="Systeemlink" className="h-[44px]" />
               </Link>
 
-              {/* Right: Helpdesk + Phone Icons */}
-              <div className="flex items-center gap-2 z-10 ml-auto">
+              {/* Right: Support Icon */}
+              <div className="flex items-center z-10 ml-auto -mr-2">
                 <Link
                   to="/oplossingen/it-support"
-                  className="p-2 text-gray-700 dark:text-gray-300 hover:text-[#0ea5e9] transition-colors"
+                  className="p-2.5 text-gray-700 dark:text-gray-300 hover:text-[#0ea5e9] transition-colors rounded-lg border-2 border-gray-200 dark:border-gray-700 hover:border-[#0ea5e9]"
                   aria-label="Helpdesk"
                 >
-                  <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" strokeWidth="0.5">
+                  <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" strokeWidth="0.5">
                     <path d="M12 1c-4.97 0-9 4.03-9 9v7c0 1.66 1.34 3 3 3h3v-8H5v-2c0-3.87 3.13-7 7-7s7 3.13 7 7v2h-4v8h3c1.66 0 3-1.34 3-3v-7c0-4.97-4.03-9-9-9z"/>
                   </svg>
                 </Link>
-                <a
-                  href="tel:+31613777733"
-                  className="p-2 text-gray-700 dark:text-gray-300 hover:text-[#0ea5e9] transition-colors"
-                  aria-label="Bel ons"
-                >
-                  <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" strokeWidth="0.5">
-                    <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
-                  </svg>
-                </a>
               </div>
             </div>
           </div>
