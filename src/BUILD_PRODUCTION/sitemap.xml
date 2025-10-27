@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+        http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+
+    <!-- Homepage -->
+    <url>
+        <loc>https://systeemlink.nl/</loc>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+    </url>
+
+    <!-- IT Check -->
+    <url>
+        <loc>https://systeemlink.nl/it-check</loc>
+        <changefreq>monthly</changefreq>
+        <priority>0.9</priority>
+    </url>
+
+    <!-- Solutions -->
+    <url>
+        <loc>https://systeemlink.nl/oplossingen</loc>
+        <changefreq>monthly</changefreq>
+        <priority>0.9</priority>
+    </url>
+    <url>
+        <loc>https://systeemlink.nl/oplossingen/werkplekbeheer</loc>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://systeemlink.nl/oplossingen/cloud-microsoft-365</loc>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://systeemlink.nl/oplossingen/netwerk-beveiliging</loc>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://systeemlink.nl/oplossingen/it-support</loc>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <!-- Scan Pages -->
+    <url>
+        <loc>https://systeemlink.nl/scan/modern-workplace</loc>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://systeemlink.nl/scan/cloud-readiness</loc>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://systeemlink.nl/scan/security</loc>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
+    <!-- Branches -->
+    <url>
+        <loc>https://systeemlink.nl/branches</loc>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://systeemlink.nl/branches/zakelijke-dienstverlening</loc>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://systeemlink.nl/branches/zorg-onderwijs</loc>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://systeemlink.nl/branches/retail-logistiek</loc>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://systeemlink.nl/branches/bouw-industrie</loc>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
+    <!-- Company Info -->
+    <url>
+        <loc>https://systeemlink.nl/bedrijfsinformatie/over-ons</loc>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+    </url>
+    <url>
+        <loc>https://systeemlink.nl/bedrijfsinformatie/partners-certificeringen</loc>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+    </url>
+    <url>
+        <loc>https://systeemlink.nl/bedrijfsinformatie/certificeringen</loc>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+    </url>
+    <url>
+        <loc>https://systeemlink.nl/bedrijfsinformatie/vacatures</loc>
+        <changefreq>weekly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://systeemlink.nl/bedrijfsinformatie/contact</loc>
+        <changefreq>yearly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+</urlset>

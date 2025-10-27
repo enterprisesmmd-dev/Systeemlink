@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    
+    <!-- SEO Meta Tags -->
+    <title>Systeemlink - Professioneel IT-beheer voor het MKB</title>
+    <meta name="description" content="Systeemlink biedt professioneel IT-beheer, werkplekbeheer, cloud oplossingen en netwerkbeveiliging voor MKB bedrijven in Nederland.">
+    <meta name="keywords" content="IT-beheer, werkplekbeheer, cloud, Microsoft 365, netwerkbeveiliging, IT-support, MKB">
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="Systeemlink">
+    <link rel="canonical" href="https://systeemlink.nl">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="Systeemlink - Professioneel IT-beheer">
+    <meta property="og:description" content="Complete IT-oplossingen voor het MKB. Van werkplekbeheer tot cloud migraties.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://systeemlink.nl">
+    <meta property="og:site_name" content="Systeemlink">
+    <meta property="og:locale" content="nl_NL">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Systeemlink - Professioneel IT-beheer">
+    <meta name="twitter:description" content="Complete IT-oplossingen voor het MKB">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="/assets/favicon.png">
+    <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+    
+    <!-- Preconnect for Performance -->
+    <link rel="preconnect" href="https://cdn.tailwindcss.com">
+    <link rel="preconnect" href="https://unpkg.com">
+    <link rel="dns-prefetch" href="https://js.hcaptcha.com">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        primary: {
+                            50: '#f0f9ff',
+                            100: '#e0f2fe',
+                            200: '#bae6fd',
+                            300: '#7dd3fc',
+                            400: '#38bdf8',
+                            500: '#0ea5e9',
+                            600: '#0284c7',
+                            700: '#0369a1',
+                            800: '#075985',
+                            900: '#0c4a6e',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="/styles/main.css">
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <!-- hCaptcha -->
+    <script src="https://js.hcaptcha.com/1/api.js" async defer></script>
+    
+    <!-- Performance & Analytics -->
+    <script>
+        // Performance monitoring
+        if ('performance' in window) {
+            window.addEventListener('load', function() {
+                setTimeout(function() {
+                    const perfData = performance.getEntriesByType('navigation')[0];
+                    console.log('Page Load Time:', perfData.loadEventEnd - perfData.fetchStart, 'ms');
+                }, 0);
+            });
+        }
+    </script>
+    
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "Systeemlink",
+        "url": "https://systeemlink.nl",
+        "logo": "https://systeemlink.nl/assets/logo.png",
+        "description": "Professioneel IT-beheer voor het MKB",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Planetenpark 19",
+            "addressLocality": "Purmerend",
+            "postalCode": "1443BS",
+            "addressCountry": "NL"
+        },
+        "contactPoint": {
+            "@type": "ContactPoint",
+            "telephone": "+31-613777733",
+            "contactType": "Customer Service",
+            "areaServed": "NL",
+            "availableLanguage": "Dutch"
+        },
+        "sameAs": [
+            "https://www.linkedin.com/company/systeemlink"
+        ]
+    }
+    </script>
+</head>
+<body class="bg-white dark:bg-gray-950 text-gray-900 dark:text-gray-100 antialiased">
+    
+    <!-- React Root -->
+    <div id="root"></div>
+    
+    <!-- Loading Fallback -->
+    <noscript>
+        <div style="padding: 40px; text-align: center; font-family: system-ui, -apple-system, sans-serif;">
+            <h1>JavaScript vereist</h1>
+            <p>Deze website vereist JavaScript om te functioneren. Schakel JavaScript in en laad de pagina opnieuw.</p>
+        </div>
+    </noscript>
+    
+    <!-- App Bundle -->
+    <script type="module" src="/dist/main.js"></script>
+    
+    <!-- Cookie Consent (Inline for instant load) -->
+    <script>
+        // Check cookie consent
+        function getCookie(name) {
+            const value = `; ${document.cookie}`;
+            const parts = value.split(`; ${name}=`);
+            if (parts.length === 2) return parts.pop().split(';').shift();
+        }
+        
+        if (!getCookie('cookieConsent')) {
+            window.addEventListener('load', function() {
+                const banner = document.getElementById('cookie-consent-banner');
+                if (banner) banner.classList.remove('hidden');
+            });
+        }
+    </script>
+    
+</body>
+</html>

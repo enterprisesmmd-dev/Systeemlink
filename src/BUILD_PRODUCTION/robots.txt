@@ -1,0 +1,21 @@
+# Systeemlink robots.txt
+
+User-agent: *
+Allow: /
+
+# Sitemaps
+Sitemap: https://systeemlink.nl/sitemap.xml
+
+# Disallow admin areas (if any in future)
+Disallow: /admin
+Disallow: /private
+
+# Allow common crawlers
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+# Crawl delay (optional)
+# Crawl-delay: 1
