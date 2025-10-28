@@ -6,6 +6,9 @@ Deze website is een React Single Page Application (SPA). Voor correcte werking v
 
 Als je een "404 Not Found" error krijgt bij het direct bezoeken van pagina's zoals `/oplossingen`:
 
+### Voor Render.com ⭐ (Huidige hosting)
+✅ Al geconfigureerd via `/render.yaml` - geen extra stappen nodig!
+
 ### Voor Vercel
 ✅ Al geconfigureerd via `/vercel.json` - geen extra stappen nodig!
 
@@ -19,7 +22,79 @@ Als je een "404 Not Found" error krijgt bij het direct bezoeken van pagina's zoa
 
 ## 📋 Volledige Deployment Instructies
 
-### 1. Vercel (Aanbevolen)
+### 1. Render.com ⭐ (Aanbevolen voor jullie setup)
+
+**BELANGRIJK:** Render.com heeft een specifieke configuratie nodig voor SPA routing!
+
+**Via Dashboard (Aanbevolen):**
+
+1. **Login bij Render.com**
+   - Ga naar [dashboard.render.com](https://dashboard.render.com)
+
+2. **Nieuwe Static Site aanmaken:**
+   - Klik op "New +" → "Static Site"
+   - Connect je Git repository (GitHub/GitLab)
+   - Of gebruik "Deploy without Git" voor handmatige upload
+
+3. **Configuratie:**
+   ```
+   Name: systeemlink
+   Branch: main (of jouw branch)
+   Build Command: npm install && npm run build
+   Publish Directory: dist
+   ```
+
+4. **CRUCIALE STAP - Rewrites toevoegen:**
+   - Scroll naar beneden naar "Redirects/Rewrites"
+   - Klik op "Add Rule"
+   - **Source:** `/*`
+   - **Destination:** `/index.html`
+   - **Action:** `Rewrite`
+   
+   OF gebruik de `render.yaml` file (makkelijker):
+   - De `render.yaml` in de root directory wordt automatisch gedetecteerd
+   - Dit zorgt voor correcte SPA routing én security headers
+
+5. **Deploy:**
+   - Klik op "Create Static Site"
+   - Wacht tot de build klaar is
+   - Test je routes!
+
+**Via render.yaml (Automatisch):**
+
+De `render.yaml` file in de root zorgt voor:
+- ✅ Automatische SPA routing (`/* → /index.html`)
+- ✅ Security headers
+- ✅ Asset caching
+- ✅ Node 18 environment
+
+Bij elke Git push wordt automatisch opnieuw gedeployed!
+
+**Test checklist na deployment:**
+```bash
+# Test deze URLs direct:
+https://jouw-site.onrender.com/
+https://jouw-site.onrender.com/oplossingen
+https://jouw-site.onrender.com/branches
+https://jouw-site.onrender.com/it-check
+```
+
+Als je een 404 ziet, check:
+1. Is de Rewrite rule correct toegevoegd? (`/* → /index.html`)
+2. Is `render.yaml` in de root directory?
+3. Kijk in de Build Logs of er errors zijn
+
+**Custom Domain toevoegen:**
+1. Ga naar je Static Site settings
+2. Click "Custom Domain"
+3. Voeg `systeemlink.nl` en `www.systeemlink.nl` toe
+4. Update je DNS records zoals aangegeven
+
+✅ Het `render.yaml` bestand zorgt automatisch voor correcte routing!
+
+---
+
+### 2. Vercel
 
 **Automatische deployment:**
 ```bash
@@ -43,7 +118,7 @@ vercel --prod
 
 ---
 
-### 2. Netlify
+### 3. Netlify
 
 **Automatische deployment:**
 ```bash
@@ -70,7 +145,7 @@ netlify deploy --prod
 
 ---
 
-### 3. Traditionele Hosting (cPanel / DirectAdmin / FTP)
+### 4. Traditionele Hosting (cPanel / DirectAdmin / FTP)
 
 **Stappen:**
 
@@ -122,7 +197,7 @@ service apache2 restart
 
 ---
 
-### 4. Nginx
+### 5. Nginx
 
 Voeg dit toe aan je Nginx config:
 
@@ -166,7 +241,7 @@ sudo systemctl restart nginx
 
 ---
 
-### 5. GitHub Pages
+### 6. GitHub Pages
 
 **Let op:** GitHub Pages heeft beperkte ondersteuning voor SPA routing!
 
