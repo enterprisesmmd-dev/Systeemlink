@@ -154,8 +154,8 @@ export function Header() {
               </div>
 
               {/* Center: Logo */}
-              <Link to="/" className="flex items-center justify-center focus:outline-none focus-visible:ring-2 focus-visible:ring-[#0ea5e9]/50 focus-visible:ring-offset-2 rounded-lg">
-                <img src={logo} alt="Systeemlink" className="h-[52px]" />
+              <Link to="/" className="flex items-center justify-center !outline-none !border-0 focus:!outline-none active:!outline-none focus-visible:!outline-none focus-visible:!ring-0">
+                <img src={logo} alt="Systeemlink" className="h-[52px] !outline-none !border-0 focus:!outline-none active:!outline-none" />
               </Link>
 
               {/* Right: CTA Button */}
