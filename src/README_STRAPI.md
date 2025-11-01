@@ -55,7 +55,37 @@ systeemlink-project/
 
 ## 🚀 Quick Start
 
-### 1️⃣ Lokale Development
+### ⭐ Optie 1: Strapi Cloud (AANBEVOLEN - Gratis)
+
+```bash
+# 1. Ga naar https://strapi.io/cloud
+# 2. Maak gratis account aan
+# 3. Deploy nieuw project (2-3 minuten)
+# 4. Upload content types via GitHub of handmatig
+# 5. Kopieer API token
+
+# React frontend configureren
+echo "VITE_STRAPI_URL=https://your-project.strapiapp.com" >> .env
+echo "VITE_STRAPI_API_TOKEN=your-token" >> .env
+
+# React opstarten
+npm run dev
+```
+
+**Zie**: `/STRAPI_CLOUD_SETUP.md` voor complete gids
+
+### 💰 Waarom Strapi Cloud?
+- ✅ **€0/maand** - Volledig gratis
+- ✅ **Geen server nodig** - Volledig gehost
+- ✅ **15 minuten setup** - Deploy in Cloud
+- ✅ **Auto-updates** - Altijd nieuwste versie
+- ✅ **Auto-backups** - Dagelijkse backups
+- ✅ **SSL included** - Gratis HTTPS
+- ✅ **1GB storage** - Ruim genoeg voor Systeemlink
+
+---
+
+### Optie 2: Lokale Development
 
 ```bash
 # Strapi opstarten
@@ -78,24 +108,22 @@ npm run dev
 
 **Zie**: `/strapi/QUICK_START.md` voor gedetailleerde instructies
 
-### 2️⃣ Plesk Deployment
+---
+
+### Optie 3: Self-Hosting op Plesk (Alleen voor Gevorderden)
 
 ```bash
 # Database aanmaken in Plesk (PostgreSQL)
-# Naam: systeemlink_strapi
-# User: systeemlink_strapi
-
 # Upload en deploy
 scp -r strapi/ root@your-server:/tmp/strapi
 ssh root@your-server
 cd /tmp/strapi
-chmod +x deploy-plesk.sh
-./deploy-plesk.sh
-
-# Volg instructies voor Nginx configuratie!
+./deploy-plesk-docker.sh
 ```
 
-**Zie**: `/strapi/PLESK_INSTALLATION.md` voor complete gids
+**Zie**: `/DOCKER_QUICK_START.md` of `/strapi/PLESK_INSTALLATION.md`
+
+**⚠️ Waarschuwing**: Self-hosting vereist server (€20-50/maand) en onderhoud. Strapi Cloud is eenvoudiger en gratis!
 
 ---
 
