@@ -1,58 +1,78 @@
-version: '3'
+version: '3.8'
 
 services:
+  # PostgreSQL Database
+  strapiDB:
+    container_name: systeemlink-postgres
+    image: postgres:14-alpine
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: ${DATABASE_USERNAME:-strapi}
+      POSTGRES_PASSWORD: ${DATABASE_PASSWORD}
+      POSTGRES_DB: ${DATABASE_NAME:-systeemlink_strapi}
+    volumes:
+      - strapi-data:/var/lib/postgresql/data
+    networks:
+      - strapi-network
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${DATABASE_USERNAME:-strapi}"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  # Strapi CMS
   strapi:
     container_name: systeemlink-strapi
-    build: .
+    build:
+      context: .
+      dockerfile: Dockerfile
     image: systeemlink/strapi:latest
     restart: unless-stopped
     env_file: .env
     environment:
-      DATABASE_CLIENT: ${DATABASE_CLIENT}
+      DATABASE_CLIENT: postgres
       DATABASE_HOST: strapiDB
-      DATABASE_NAME: ${DATABASE_NAME}
-      DATABASE_USERNAME: ${DATABASE_USERNAME}
-      DATABASE_PORT: ${DATABASE_PORT}
-      JWT_SECRET: ${JWT_SECRET}
-      ADMIN_JWT_SECRET: ${ADMIN_JWT_SECRET}
+      DATABASE_PORT: 5432
+      DATABASE_NAME: ${DATABASE_NAME:-systeemlink_strapi}
+      DATABASE_USERNAME: ${DATABASE_USERNAME:-strapi}
+      DATABASE_PASSWORD: ${DATABASE_PASSWORD}
+      DATABASE_SSL: false
+      HOST: 0.0.0.0
+      PORT: 1337
       APP_KEYS: ${APP_KEYS}
       API_TOKEN_SALT: ${API_TOKEN_SALT}
-      NODE_ENV: ${NODE_ENV}
+      ADMIN_JWT_SECRET: ${ADMIN_JWT_SECRET}
+      TRANSFER_TOKEN_SALT: ${TRANSFER_TOKEN_SALT}
+      JWT_SECRET: ${JWT_SECRET}
+      NODE_ENV: ${NODE_ENV:-production}
+      PUBLIC_URL: ${PUBLIC_URL:-http://localhost:1337}
+      CORS_ORIGINS: ${CORS_ORIGINS:-http://localhost:5173}
     volumes:
-      - ./config:/opt/app/config
-      - ./src:/opt/app/src
-      - ./package.json:/opt/package.json
-      - ./package-lock.json:/opt/package-lock.json
-      - ./.env:/opt/app/.env
-      - ./public/uploads:/opt/app/public/uploads
+      # Persistent data
+      - uploads-data:/opt/app/public/uploads
+      # Configuration (optional - for live editing)
+      # - ./config:/opt/app/config
+      # - ./src:/opt/app/src
     ports:
-      - '1337:1337'
+      - "${STRAPI_PORT:-1337}:1337"
     networks:
-      - strapi
+      - strapi-network
     depends_on:
-      - strapiDB
-
-  strapiDB:
-    container_name: systeemlink-postgres
-    platform: linux/amd64
-    restart: unless-stopped
-    env_file: .env
-    image: postgres:14.5-alpine
-    environment:
-      POSTGRES_USER: ${DATABASE_USERNAME}
-      POSTGRES_PASSWORD: ${DATABASE_PASSWORD}
-      POSTGRES_DB: ${DATABASE_NAME}
-    volumes:
-      - strapi-data:/var/lib/postgresql/data/
-    ports:
-      - '5432:5432'
-    networks:
-      - strapi
+      strapiDB:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD", "wget", "--spider", "-q", "http://localhost:1337/_health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 60s
 
 volumes:
   strapi-data:
+    driver: local
+  uploads-data:
+    driver: local
 
 networks:
-  strapi:
-    name: Strapi
+  strapi-network:
     driver: bridge

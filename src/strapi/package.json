@@ -8,7 +8,10 @@
     "start": "strapi start",
     "build": "strapi build",
     "strapi": "strapi",
-    "migrate": "node scripts/migrate.js"
+    "migrate": "node scripts/migrate-data.js",
+    "generate-secrets": "node -e \"console.log('APP_KEYS=' + Array(4).fill(0).map(() => require('crypto').randomBytes(32).toString('base64')).join(',') + '\\nAPI_TOKEN_SALT=' + require('crypto').randomBytes(32).toString('base64') + '\\nADMIN_JWT_SECRET=' + require('crypto').randomBytes(32).toString('base64') + '\\nTRANSFER_TOKEN_SALT=' + require('crypto').randomBytes(32).toString('base64') + '\\nJWT_SECRET=' + require('crypto').randomBytes(32).toString('base64'))\"",
+    "health": "curl http://localhost:1337/_health || echo 'Strapi is not running'",
+    "deploy-plesk": "bash deploy-plesk.sh"
   },
   "dependencies": {
     "@strapi/strapi": "4.25.12",
@@ -18,10 +21,13 @@
     "better-sqlite3": "9.4.3"
   },
   "devDependencies": {
-    "@types/node": "20.14.9"
+    "@types/node": "20.14.9",
+    "@strapi/typescript-utils": "4.25.12"
   },
   "author": {
-    "name": "Systeemlink"
+    "name": "Systeemlink",
+    "email": "info@systeemlink.nl",
+    "url": "https://systeemlink.nl"
   },
   "strapi": {
     "uuid": "systeemlink-cms"

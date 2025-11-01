@@ -1,0 +1,51 @@
+{
+  "kind": "collectionType",
+  "collectionName": "form_submissions",
+  "info": {
+    "singularName": "form-submission",
+    "pluralName": "form-submissions",
+    "displayName": "Form Submission",
+    "description": "Alle formulier inzendingen"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "type": {
+      "type": "enumeration",
+      "enum": [
+        "it-check",
+        "contact",
+        "scan",
+        "support",
+        "general"
+      ],
+      "required": true
+    },
+    "data": {
+      "type": "json",
+      "required": true
+    },
+    "metadata": {
+      "type": "json"
+    },
+    "status": {
+      "type": "enumeration",
+      "enum": [
+        "new",
+        "in-progress",
+        "completed",
+        "archived"
+      ],
+      "default": "new"
+    },
+    "notes": {
+      "type": "text"
+    },
+    "read": {
+      "type": "boolean",
+      "default": false
+    }
+  }
+}

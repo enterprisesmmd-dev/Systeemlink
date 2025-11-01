@@ -1,0 +1,49 @@
+{
+  "kind": "singleType",
+  "collectionName": "support_widget_settings",
+  "info": {
+    "singularName": "support-widget-setting",
+    "pluralName": "support-widget-settings",
+    "displayName": "Support Widget Settings",
+    "description": "Support widget configuratie"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "enabled": {
+      "type": "boolean",
+      "default": true
+    },
+    "position": {
+      "type": "enumeration",
+      "enum": ["bottom-right", "bottom-left", "top-right", "top-left"],
+      "default": "bottom-right"
+    },
+    "primaryColor": {
+      "type": "string",
+      "default": "#0066CC"
+    },
+    "greeting": {
+      "type": "string",
+      "default": "Hoe kunnen we je helpen?"
+    },
+    "offlineMessage": {
+      "type": "text",
+      "default": "We zijn momenteel offline. Laat een bericht achter en we nemen zo snel mogelijk contact met je op."
+    },
+    "availabilityText": {
+      "type": "string",
+      "default": "Ma-Vr: 09:00 - 17:00"
+    },
+    "contactEmail": {
+      "type": "email",
+      "default": "support@systeemlink.nl"
+    },
+    "contactPhone": {
+      "type": "string",
+      "default": "+31 613777733"
+    }
+  }
+}

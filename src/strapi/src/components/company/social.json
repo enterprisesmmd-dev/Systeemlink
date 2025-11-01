@@ -1,0 +1,25 @@
+{
+  "collectionName": "components_company_socials",
+  "info": {
+    "displayName": "Social Media",
+    "description": "Social media links"
+  },
+  "options": {},
+  "attributes": {
+    "linkedin": {
+      "type": "string"
+    },
+    "twitter": {
+      "type": "string"
+    },
+    "facebook": {
+      "type": "string"
+    },
+    "instagram": {
+      "type": "string"
+    },
+    "youtube": {
+      "type": "string"
+    }
+  }
+}

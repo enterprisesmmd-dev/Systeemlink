@@ -1,0 +1,21 @@
+{
+  "collectionName": "components_company_contacts",
+  "info": {
+    "displayName": "Contact",
+    "description": "Contact informatie"
+  },
+  "options": {},
+  "attributes": {
+    "phone": {
+      "type": "string",
+      "required": true
+    },
+    "email": {
+      "type": "email",
+      "required": true
+    },
+    "website": {
+      "type": "string"
+    }
+  }
+}

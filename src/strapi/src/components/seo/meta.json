@@ -1,0 +1,39 @@
+{
+  "collectionName": "components_seo_metas",
+  "info": {
+    "displayName": "SEO Meta",
+    "description": "SEO metadata voor pagina's"
+  },
+  "options": {},
+  "attributes": {
+    "metaTitle": {
+      "type": "string",
+      "required": true,
+      "maxLength": 60
+    },
+    "metaDescription": {
+      "type": "text",
+      "required": true,
+      "maxLength": 160
+    },
+    "keywords": {
+      "type": "string"
+    },
+    "metaImage": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": ["images"]
+    },
+    "canonicalURL": {
+      "type": "string"
+    },
+    "metaRobots": {
+      "type": "string",
+      "default": "index,follow"
+    },
+    "structuredData": {
+      "type": "json"
+    }
+  }
+}

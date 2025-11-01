@@ -1,0 +1,56 @@
+{
+  "kind": "singleType",
+  "collectionName": "company_settings",
+  "info": {
+    "singularName": "company-setting",
+    "pluralName": "company-settings",
+    "displayName": "Company Settings",
+    "description": "Algemene bedrijfsinstellingen"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true,
+      "default": "Systeemlink"
+    },
+    "tagline": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "logo": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": ["images"]
+    },
+    "address": {
+      "type": "component",
+      "repeatable": false,
+      "component": "company.address",
+      "required": true
+    },
+    "contact": {
+      "type": "component",
+      "repeatable": false,
+      "component": "company.contact",
+      "required": true
+    },
+    "business": {
+      "type": "component",
+      "repeatable": false,
+      "component": "company.business",
+      "required": true
+    },
+    "social": {
+      "type": "component",
+      "repeatable": false,
+      "component": "company.social"
+    }
+  }
+}

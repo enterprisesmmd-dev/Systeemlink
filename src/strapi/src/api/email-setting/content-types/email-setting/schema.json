@@ -1,0 +1,55 @@
+{
+  "kind": "singleType",
+  "collectionName": "email_settings",
+  "info": {
+    "singularName": "email-setting",
+    "pluralName": "email-settings",
+    "displayName": "Email Settings",
+    "description": "Email configuratie en notificatie instellingen"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "fromEmail": {
+      "type": "email",
+      "required": true,
+      "default": "noreply@systeemlink.nl"
+    },
+    "fromName": {
+      "type": "string",
+      "required": true,
+      "default": "Systeemlink"
+    },
+    "replyToEmail": {
+      "type": "email",
+      "required": true,
+      "default": "info@systeemlink.nl"
+    },
+    "notificationEmails": {
+      "type": "json",
+      "default": ["info@systeemlink.nl"]
+    },
+    "enabled": {
+      "type": "boolean",
+      "default": true
+    },
+    "smtpHost": {
+      "type": "string"
+    },
+    "smtpPort": {
+      "type": "integer"
+    },
+    "smtpSecure": {
+      "type": "boolean",
+      "default": true
+    },
+    "smtpUsername": {
+      "type": "string"
+    },
+    "smtpPassword": {
+      "type": "password"
+    }
+  }
+}

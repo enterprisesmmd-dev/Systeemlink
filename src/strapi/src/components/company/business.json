@@ -1,0 +1,24 @@
+{
+  "collectionName": "components_company_businesses",
+  "info": {
+    "displayName": "Business Info",
+    "description": "Bedrijfsregistratie informatie"
+  },
+  "options": {},
+  "attributes": {
+    "kvk": {
+      "type": "string",
+      "required": true
+    },
+    "btw": {
+      "type": "string",
+      "required": true
+    },
+    "iban": {
+      "type": "string"
+    },
+    "bankName": {
+      "type": "string"
+    }
+  }
+}
