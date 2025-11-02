@@ -194,7 +194,7 @@ export function HomePage() {
           >
             <Badge className="mb-4 bg-indigo-100 dark:bg-indigo-900/30 text-indigo-700 dark:text-indigo-400">Vertrouwd door</Badge>
             <h2 className="text-4xl lg:text-5xl mb-4 text-gray-900 dark:text-gray-100">
-              200+ bedrijven gingen u voor
+              5 bedrijven gingen u voor
             </h2>
             <p className="text-xl text-gray-600 dark:text-gray-400">
               Van startup tot enterprise - wij zijn er voor elk bedrijf
